@@ -9,7 +9,6 @@
     "dev": "nodemon",
     "start": "node ./bin/www",
     "test": "mocha",
-    "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs",
     "build": ""
   },
   "dependencies": {
@@ -26,5 +25,8 @@
     "serve-favicon": "^2.4.5",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
+  },
+  "devDependencies": {
+  
   }
 }

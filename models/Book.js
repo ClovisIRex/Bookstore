@@ -1,5 +1,6 @@
 const mongoose = require('../helpers/db')
 const Schema = mongoose.Schema
+ 
 
 const bookSchema = new Schema({
     title: String,
@@ -10,5 +11,6 @@ const bookSchema = new Schema({
     genre: String,
     price: Number
 })
+
 
 module.exports = mongoose.model('Book', bookSchema)

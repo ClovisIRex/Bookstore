@@ -1,4 +1,3 @@
-
 const {ValidationError} = require('../errors/error')
 
 const Joi = require('joi');
@@ -18,8 +17,8 @@ const validate = (bookData) => {
 
     return new Promise((resolve, reject) => {
         Joi.validate(bookData, schema, (err) => {
-            if (err) reject(err);
-            else resolve(true);
+            if (err) reject(new ValidationError());
+            else resolve(bookData);
         });
     });
     

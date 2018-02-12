@@ -2,7 +2,7 @@ const { ValidationError, AlreadyExistsError } = require('./error')
 
 module.exports = (error, req, res, next) => {
     let msg;
-
+    res.status(400);
     switch(error.constructor) {
         case ValidationError:
             msg = 'Request failed- data not validated, enter valid data.';
@@ -11,10 +11,12 @@ module.exports = (error, req, res, next) => {
             msg = 'Request failed- data already exists.';
             break;
         default:
+            res.status(500);
             msg = 'General Error';
             break;
     }
     
-    res.json({'status':false, 'msg': msg})
-    console.log(`[ERROR] ${error.message}`) 
+    
+    res.json({'Error': msg})
+    console.log(`[ERROR] ${error.stack}`) 
 }

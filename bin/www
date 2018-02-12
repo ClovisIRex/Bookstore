@@ -2,11 +2,11 @@
 "use strict"
 
 //module dependencies.
-let app = require('../app')
-let db = require('../helpers/db')
-let config = require('../config/server')
-let debug = require("debug")("express:server")
-let http = require("http")
+const app = require('../app')
+const db = require('../helpers/db')
+const config = require('../config/server')
+const debug = require("debug")("express:server")
+const http = require("http")
 
 //get port from environment and store in Express.
 let port = config.port
@@ -32,9 +32,7 @@ function onError(error) {
       throw error;
     }
   
-    var bind = typeof port === "string"
-      ? "Pipe " + port
-      : "Port " + port;
+    let bind = typeof port === "string" ? "Pipe " + port : "Port " + port;
   
     // handle specific listen errors with friendly messages
     switch (error.code) {
@@ -55,9 +53,7 @@ function onError(error) {
   * Event listener for HTTP server "listening" event.
   */
  function onListening() {
-   var addr = server.address();
-   var bind = typeof addr === "string"
-     ? "pipe " + addr
-     : "port " + addr.port;
-   console.log("[INFO] Listening on " + bind);
+   let addr = server.address();
+   let bind = typeof addr === "string" ? "pipe " + addr : "port " + addr.port;
+   console.log(`[INFO] Listening on ${bind}`);
  }
