@@ -70,7 +70,7 @@ describe('Books', () => {
     });
 
     describe('/PUT /api/book/:id', () => {
-        it('it should UPDATE a book that doesnt exist', (done) => { 
+        it('it should not UPDATE a book that doesnt exist', (done) => { 
             let book = {
                 "title": "doesn't exist",
                 "description": "tesadasdstdesc",
@@ -173,6 +173,39 @@ describe('Books', () => {
         });
     });
 
+    describe('/GET /api/book/:id', () => {
+        it('it should GET a book by id', (done) => { 
+            let book = {
+                "title": "newbook",
+                "description": "tesadasdstdesc",
+                "isbn": 123331232143333242343,
+                "author": "tessadasdtauthor",
+                "publicationDate": "2019-08-01T00:00:00.000Z",
+                "genre": "Horror",
+                "price": 212133
+            }
+
+            chai.request(server)
+                .post('/api/book')
+                .send(book)
+                .end((err,res) => {
+                    chai.request(server)
+                    .get('/api/book/' + res.body._id)
+                    .end((err, response) => {
+                        response.should.have.status(200);
+                        response.body.should.be.a('object');
+                        response.body.should.have.property('title').eql("newbook"); 
+                        response.body.should.have.property('description').eql("tesadasdstdesc");
+                        response.body.should.have.property('isbn').eql(123331232143333242343);
+                        response.body.should.have.property('author').eql("tessadasdtauthor");
+                        response.body.should.have.property('publicationDate').eql("2019-08-01T00:00:00.000Z");
+                        response.body.should.have.property('genre').eql("Horror");
+                        response.body.should.have.property('price').eql(212133);
+                        done();
+                });
+            });
+        });
+    });
 
     describe('/GET /api/book', () => {
         it('it should GET all the books', (done) => {
