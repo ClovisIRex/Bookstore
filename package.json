@@ -12,19 +12,12 @@
     "build": ""
   },
   "dependencies": {
-    "axios": "^0.17.1",
-    "bluebird": "^3.5.1",
     "body-parser": "^1.18.2",
-    "bootstrap": "^4.0.0-beta.2",
-    "bootstrap-vue": "^2.0.0-rc.1",
     "express": "^4.16.2",
     "joi": "^13.1.2",
-    "lodash": "^4.17.5",
     "mongoose": "^5.0.3",
     "morgan": "^1.9.0",
-    "serve-favicon": "^2.4.5",
-    "vue": "^2.5.2",
-    "vue-router": "^3.0.1"
+    "serve-favicon": "^2.4.5"
   },
   "devDependencies": {
     "chai": "^4.1.2",

@@ -1,12 +1,12 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const morgan = require('morgan')
-
+const favicon = require('serve-favicon')
+const path = require('path');
 
 const config = require('./config/server')
 const errorController = require('./errors/errorController')
 const bookController = require('./routes/book')
-const mainController = require('./routes/main')
 
 
 class App {
@@ -21,13 +21,14 @@ class App {
 
     setupMiddleware() {
         this.express.set('view engine', 'html');
+        this.express.use('/static', express.static(path.join(__dirname, '/public/')));
+        this.express.use(favicon('public/images/favicon.ico'))
         this.express.use(bodyParser.json())
-        
+        this.express.use(bodyParser.urlencoded({'extended':'false'}))
+
         if (config.isTesting()) {
             this.express.use(morgan('dev'))
-        } 
-        
-         else {
+        } else {
             this.express.use(morgan('common'))
         }
     }
