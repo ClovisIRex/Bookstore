@@ -23,7 +23,7 @@ module.exports = (error, req, res, next) => {
     
     res.json({'Error': msg})
 
-    if (config.debugMode === "dev") {
+    if (config.isTesting()) {
         console.log(`[ERROR] ${error.stack}`)
     }
      

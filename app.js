@@ -2,9 +2,11 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const morgan = require('morgan')
 
+
 const config = require('./config/server')
 const errorController = require('./errors/errorController')
 const bookController = require('./routes/book')
+const mainController = require('./routes/main')
 
 
 class App {
@@ -18,7 +20,7 @@ class App {
     }
 
     setupMiddleware() {
-
+        this.express.set('view engine', 'html');
         this.express.use(bodyParser.json())
         
         if (config.isTesting()) {
@@ -31,12 +33,16 @@ class App {
     }
 
     setupRoutes() {
+        this.express.get('/', (req, res) => {
+            res.sendFile(__dirname + '/index.html');
+        })
         this.express.use('/api/book',bookController)
     }
     
     setupErrorHandler() {
         this.express.use(errorController)
     }
+    
 }
 
 module.exports = new App().express
