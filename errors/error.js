@@ -24,7 +24,20 @@ class AlreadyExistsError extends Error {
       }
 }
 
+class DoesntExistError extends Error {
+    constructor(msg = 'Object does not exis in DBt', ...params) {
+        //Pass remaining arguments (including vendor specific ones) to parent constructor
+        super(...params);
+    
+        //Custom debugging information
+        this.msg = msg
+        this.date = new Date();
+      }
+}
+
+
 module.exports = {
     ValidationError,
     AlreadyExistsError,
+    DoesntExistError
 }

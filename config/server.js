@@ -7,5 +7,5 @@ module.exports = {
     dbConfig(){
         let autoIndexFlag = (process.env.NODE_ENV === 'production') ? false : true
         return { autoIndex: autoIndexFlag, useMongoClient: true }
-    },
+    }
 }

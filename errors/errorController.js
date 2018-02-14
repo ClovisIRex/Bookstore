@@ -1,4 +1,5 @@
-const { ValidationError, AlreadyExistsError } = require('./error')
+const { ValidationError, AlreadyExistsError, DoesntExistError } = require('./error')
+const config = require('../config/server')
 
 module.exports = (error, req, res, next) => {
     let msg;
@@ -10,6 +11,9 @@ module.exports = (error, req, res, next) => {
         case AlreadyExistsError:
             msg = 'Request failed- data already exists.';
             break;
+        case DoesntExistError:
+            msg = 'Request failed- data does not exist.';
+            break;
         default:
             res.status(500);
             msg = 'General Error';
@@ -18,5 +22,9 @@ module.exports = (error, req, res, next) => {
     
     
     res.json({'Error': msg})
-    console.log(`[ERROR] ${error.stack}`) 
+
+    if (config.debugMode === "dev") {
+        console.log(`[ERROR] ${error.stack}`)
+    }
+     
 }

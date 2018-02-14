@@ -20,10 +20,12 @@ class App {
     setupMiddleware() {
 
         this.express.use(bodyParser.json())
-
+        
         if (config.isTesting()) {
             this.express.use(morgan('dev'))
-        } else {
+        } 
+        
+         else {
             this.express.use(morgan('common'))
         }
     }

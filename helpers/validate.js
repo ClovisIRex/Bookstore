@@ -3,14 +3,14 @@ const {ValidationError} = require('../errors/error')
 const Joi = require('joi');
 
 const schema = Joi.object().keys({
-    title: Joi.string().required(),
-    description: Joi.string().required(),
-    isbn: Joi.number().required(),
-    author: Joi.string().required(),
+    title: Joi.string(),
+    description: Joi.string(),
+    isbn: Joi.number(),
+    author: Joi.string(),
     publicationDate: Joi.date(),
     genre: Joi.string().valid('Science fiction', 'Satire', 'Drama', 'Action', 'Romance',
     'Mystery','Horror'),
-    price: Joi.number().required()
+    price: Joi.number()
 });
 
 const validate = (bookData) => {
