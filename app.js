@@ -1,7 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const morgan = require('morgan')
-const favicon = require('serve-favicon')
+// const favicon = require('serve-favicon')
 const path = require('path');
 
 const config = require('./config/server')
@@ -21,8 +21,7 @@ class App {
 
     setupMiddleware() {
         this.express.set('view engine', 'html');
-        this.express.use('/static', express.static(path.join(__dirname, '/public/')));
-        this.express.use(favicon('public/images/favicon.ico'))
+        this.express.use(express.static(path.join(__dirname, 'dist')));
         this.express.use(bodyParser.json())
         this.express.use(bodyParser.urlencoded({'extended':'false'}))
 
@@ -34,9 +33,7 @@ class App {
     }
 
     setupRoutes() {
-        this.express.get('/', (req, res) => {
-            res.sendFile(__dirname + '/index.html');
-        })
+        this.express.use('/', express.static(path.join(__dirname, 'dist')));
         this.express.use('/api/book',bookController)
     }
     
