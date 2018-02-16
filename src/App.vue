@@ -1,13 +1,16 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
+  <b-container>
+    <div id="content">
+    <img src="./assets/books.png">
+    </div>
+    <h1>Bookstore</h1>
     <router-view/>
-  </div>
+  </b-container>
 </template>
 
 <script>
 export default {
-  name: 'App'
+  name: 'app'
 }
 </script>
 
@@ -16,8 +19,15 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 30px;
+}
+#content {
+    position: relative;
+}
+#content img {
+    position: absolute;
+    top: 0px;
+    right: 0px;
 }
 </style>

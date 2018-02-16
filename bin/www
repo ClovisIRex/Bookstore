@@ -1,9 +1,12 @@
 #!/usr/bin/env node
+
+/**
+ * Web server Starter script
+ */
 "use strict"
 
 //module dependencies.
 const app = require('../app')
-const db = require('../helpers/db')
 const config = require('../config/server')
 const debug = require("debug")("express:server")
 const http = require("http")

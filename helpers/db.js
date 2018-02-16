@@ -1,6 +1,9 @@
 const mongoose = require('mongoose');
 const config = require('../config/server');
 
+/**
+ * Mongoose connection wrapper
+ */
 
 //Create the database connection
 mongoose.connect(config.dbUri);

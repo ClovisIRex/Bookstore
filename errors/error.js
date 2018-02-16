@@ -1,3 +1,6 @@
+/**
+ * Custom Errors
+ */
 'use strict'
 
 // Object failed Joi validation

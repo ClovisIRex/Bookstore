@@ -10,7 +10,6 @@ const should = chai.should();
 config.dbUri = "mongodb://localhost:27017/bookstoreTest"
 
 chai.use(chaiHttp);
-
 describe('Books', () => {
 
     beforeEach((done) => {
@@ -26,7 +25,7 @@ describe('Books', () => {
                 "description": "tesadasdstdesc",
                 "isbn": 123331232143333242343,
                 "author": "tessadasdtauthor",
-                "publicationDate": "2019-08-01T00:00:00.000Z",
+                "publicationDate": 2017,
                 "genre": "asdcfsdfrror",
                 "price": 212133
             }
@@ -49,7 +48,7 @@ describe('Books', () => {
                 "description": "tesadasdstdesc",
                 "isbn": 123331232143333242343,
                 "author": "tessadasdtauthor",
-                "publicationDate": "2019-08-01T00:00:00.000Z",
+                "publicationDate": 2017,
                 "genre": "Horror",
                 "price": 212133
             }
@@ -76,7 +75,7 @@ describe('Books', () => {
                 "description": "tesadasdstdesc",
                 "isbn": 123331232143333242343,
                 "author": "tessadasdtauthor",
-                "publicationDate": "2019-08-01T00:00:00.000Z",
+                "publicationDate": 2017,
                 "genre": "Horror",
                 "price": 212133
             }
@@ -99,7 +98,7 @@ describe('Books', () => {
                 "description": "tesadasdstdesc",
                 "isbn": 123331232143333242343,
                 "author": "tessadasdtauthor",
-                "publicationDate": "2019-08-01T00:00:00.000Z",
+                "publicationDate": 2017,
                 "genre": "Horror",
                 "price": 212133
             }
@@ -139,7 +138,7 @@ describe('Books', () => {
                 "description": "tesadasdstdesc",
                 "isbn": 123331232143333242343,
                 "author": "tessadasdtauthor",
-                "publicationDate": "2019-08-01T00:00:00.000Z",
+                "publicationDate": 2016,
                 "genre": "Horror",
                 "price": 212133
             }
@@ -180,7 +179,7 @@ describe('Books', () => {
                 "description": "tesadasdstdesc",
                 "isbn": 123331232143333242343,
                 "author": "tessadasdtauthor",
-                "publicationDate": "2019-08-01T00:00:00.000Z",
+                "publicationDate": 2016,
                 "genre": "Horror",
                 "price": 212133
             }
@@ -198,7 +197,7 @@ describe('Books', () => {
                         response.body.should.have.property('description').eql("tesadasdstdesc");
                         response.body.should.have.property('isbn').eql(123331232143333242343);
                         response.body.should.have.property('author').eql("tessadasdtauthor");
-                        response.body.should.have.property('publicationDate').eql("2019-08-01T00:00:00.000Z");
+                        response.body.should.have.property('publicationDate').eql(2016);
                         response.body.should.have.property('genre').eql("Horror");
                         response.body.should.have.property('price').eql(212133);
                         done();
