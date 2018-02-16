@@ -2,6 +2,8 @@
 
 > A MEVN-stack CRUD app, frontend built mostly with vue-cli+webpack scaffolding and templates, backend manually.
 
+API docs can be found here: https://documenter.getpostman.com/view/2006055/bookstore/RVfvDr76
+
 ## Build Setup
 
 Setup MongoDB locally on the default port(no user) or set the environment variable        ```process.env.MONGODB_URI```
