@@ -45,6 +45,7 @@ export default {
     })
     .catch(e => {
       this.errors.push(e)
+      alert(e.response.data.Error)
     })
   },
   methods: {
@@ -62,7 +63,7 @@ export default {
         })
       })
       .catch(e => {
-        alert("Error: Couldn't show book.")
+        alert(e.response.data.Error)
         this.errors.push(e)
       })
     }

@@ -83,8 +83,8 @@ export default {
       .then(response => {
         this.book = response.data;
       })
-      .catch(() => {
-        alert("Error: Couldn't get books...")
+      .catch((e) => {
+        alert(e.response.data.Error)
       });
   },
   methods: {
@@ -112,7 +112,7 @@ export default {
         })
         .catch((e) => {
           this.errors.push(e)
-          alert("Error: Couldn't update the book, make sure all data is valid and try again.")
+          alert(e.response.data.Error)
         });
     }
   }

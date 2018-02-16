@@ -1,8 +1,10 @@
 # Bookstore
 
-> A MEVN-stack CRUD app, frontend built mostly with vue-cli+webpack scaffolding backend manually.
+> A MEVN-stack CRUD app, frontend built mostly with vue-cli+webpack scaffolding and templates, backend manually.
 
 ## Build Setup
+
+Setup MongoDB locally on the default port(no user) or set the environment variable        ```process.env.MONGODB_URI```
 
 ``` bash
 # install dependencies

@@ -41,8 +41,8 @@ export default {
     .then(response => {
       this.books = response.data
     })
-    .catch(() => {
-      alert("Couldn't get books...")
+    .catch((e) => {
+      alert(e.response.data.Error)
     })
   },
   methods: {

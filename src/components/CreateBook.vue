@@ -87,8 +87,8 @@ export default {
             params: { id: response.data._id }
           });
         })
-        .catch(() => {
-          alert("Book not created! Make sure you input valid values and try again!")
+        .catch((e) => {
+          alert(e.response.data.Error)
         });
     }
   }
