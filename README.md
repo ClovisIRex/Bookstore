@@ -21,6 +21,9 @@ npm run build
 # build for production and view the bundle analyzer report
 npm run build --report
 
+# Run mocha unit tests(server)
+npm test
+
 # Run the app
 npm start
 ```
