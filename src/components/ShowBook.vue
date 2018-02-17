@@ -39,7 +39,7 @@ export default {
     }
   },
   created () {
-    axios.get(`http://localhost:8080/api/book/` + this.$route.params.id)
+    axios.get(`https://bookstore-mevn.herokuapp.com/api/book/` + this.$route.params.id)
     .then(response => {
       this.book = response.data
     })
@@ -56,7 +56,7 @@ export default {
       })
     },
     deletebook (bookid) {
-      axios.delete('http://localhost:8080/api/book/' + bookid)
+      axios.delete('https://bookstore-mevn.herokuapp.com/api/book/' + bookid)
       .then((result) => {
         this.$router.push({
           name: 'BookList'

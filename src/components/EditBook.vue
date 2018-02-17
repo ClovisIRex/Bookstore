@@ -88,7 +88,7 @@ export default {
   },
   created() {
     axios
-      .get(`http://localhost:8080/api/book/` + this.$route.params.id)
+      .get(`https://bookstore-mevn.herokuapp.com/api/book/` + this.$route.params.id)
       .then(response => {
         this.book = response.data;
       })
@@ -110,7 +110,7 @@ export default {
       }
       axios
         .put(
-          `http://localhost:8080/api/book/` + this.$route.params.id,
+          `https://bookstore-mevn.herokuapp.com/api/book/` + this.$route.params.id,
           payload
         )
         .then(response => {

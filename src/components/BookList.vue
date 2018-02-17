@@ -37,7 +37,7 @@ export default {
     }
   },
   created () {
-    axios.get(`http://localhost:8080/api/book/`)
+    axios.get(`https://bookstore-mevn.herokuapp.com/api/book`)
     .then(response => {
       this.books = response.data
     })

@@ -90,7 +90,7 @@ export default {
     onSubmit(evt) {
       evt.preventDefault();
       axios
-        .post(`http://localhost:8080/api/book/`, this.book)
+        .post(`https://bookstore-mevn.herokuapp.com/api/book`, this.book)
         .then(response => {
           this.$router.push({
             name: "ShowBook",
