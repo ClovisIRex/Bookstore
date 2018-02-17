@@ -1,14 +1,14 @@
 <template>
   <b-row>
     <b-col cols="12">
+      <br>
       <h2>
         Book List
-        <b-link href="#/add-book">(Add Book)</b-link>
       </h2>
       <br>
       <b-table striped hover :items="books" :fields="fields">
         <template slot="actions" slot-scope="row">
-          <b-btn size="sm" @click.stop="details(row.item)">Details</b-btn>
+          <b-btn v-b-tooltip.hover title="From here, you can delete or edit the book" size="sm" @click.stop="details(row.item)">Details</b-btn>
         </template>
       </b-table>
       <ul v-if="errors && errors.length">

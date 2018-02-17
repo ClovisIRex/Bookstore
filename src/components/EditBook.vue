@@ -57,8 +57,17 @@
                   horizontal
                   :label-cols="4"
                   breakpoint="md"
-                  label="Enter Genre (Science fiction, Satire, Drama, Action, Romance, Mystery, Horror):">
-          <b-form-input id="genre" :state="state" v-model.trim="book.genre" required></b-form-input>
+                  label="Enter Genre:">
+            <b-form-select v-model.trim="book.genre" class="mb-3">
+            <option :value="null">Please select an genre...</option>
+            <option value="Science fiction">Science Fiction</option>
+            <option value="Satire">Satire</option>
+            <option value="Drama">Drama</option>
+            <option value="Action">Action</option>
+            <option value="Romance">Romance</option>
+            <option value="Mystery">Mystery</option>
+            <option value="Horror">Horror</option>
+          </b-form-select>
         </b-form-group>
         <b-button type="submit" variant="primary">Update</b-button>
       </b-form>

@@ -1,9 +1,9 @@
 <template>
   <b-row>
     <b-col cols="12">
+      <br>
       <h2>
         Edit Book
-        <b-link href="#/">(Book List)</b-link>
       </h2>
       <br>
       <b-jumbotron>

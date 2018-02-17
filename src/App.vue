@@ -1,9 +1,18 @@
 <template>
   <b-container>
-    <div id="content">
-    <img src="./assets/books.png">
+     <div>
+    <b-navbar toggleable type="light" variant="light">
+    <img id="menuLogo" src="./assets/books.png">
+        <b-navbar-toggle target="nav_text_collapse"></b-navbar-toggle>
+        <b-navbar-brand>Bookstore</b-navbar-brand>
+        <b-collapse is-nav id="nav_text_collapse">
+            <b-navbar-nav>
+                <b-nav-item href="#/">Show Book List</b-nav-item>
+                <b-nav-item href="#/add-book">Add a new Book</b-nav-item>
+            </b-navbar-nav>
+        </b-collapse>
+    </b-navbar>
     </div>
-    <h1>Bookstore</h1>
     <router-view/>
   </b-container>
 </template>
@@ -22,12 +31,8 @@ export default {
   color: #2c3e50;
   margin-top: 30px;
 }
-#content {
-    position: relative;
-}
-#content img {
-    position: absolute;
-    top: 0px;
-    right: 0px;
+
+#menuLogo {
+    padding-right: 0.5cm;
 }
 </style>

@@ -1,9 +1,9 @@
 <template>
   <b-row>
     <b-col cols="12">
+      <br>
       <h2>
         Add a new Book
-        <b-link href="#/">(Book List)</b-link>
       </h2>
       <br>
       <b-form @submit="onSubmit">
@@ -53,12 +53,22 @@
                   label="Enter Price:">
           <b-form-input id="price" :state="state" v-model.trim="book.price" required></b-form-input>
         </b-form-group>
+
         <b-form-group id="fieldsetHorizontal"
                   horizontal
                   :label-cols="4"
                   breakpoint="md"
-                  label="Enter Genre (Science fiction, Satire, Drama, Action, Romance, Mystery, Horror):">
-          <b-form-input id="genre" :state="state" v-model.trim="book.genre" required></b-form-input>
+                  label="Enter Genre:">
+            <b-form-select v-model.trim="book.genre" class="mb-3">
+            <option :value="null">Please select an genre...</option>
+            <option value="Science fiction">Science Fiction</option>
+            <option value="Satire">Satire</option>
+            <option value="Drama">Drama</option>
+            <option value="Action">Action</option>
+            <option value="Romance">Romance</option>
+            <option value="Mystery">Mystery</option>
+            <option value="Horror">Horror</option>
+          </b-form-select>
         </b-form-group>
         <b-button type="submit" variant="primary">Create</b-button>
       </b-form>
@@ -87,8 +97,8 @@ export default {
             params: { id: response.data._id }
           });
         })
-        .catch((e) => {
-          alert(e.response.data.Error)
+        .catch(e => {
+          alert(e.response.data.Error);
         });
     }
   }
