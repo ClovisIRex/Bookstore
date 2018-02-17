@@ -59,7 +59,7 @@
                   breakpoint="md"
                   label="Enter Genre:">
             <b-form-select v-model.trim="book.genre" class="mb-3">
-            <option :value="null">Please select an genre...</option>
+            <option :value="null" disabled>Please select an genre...</option>
             <option value="Science fiction">Science Fiction</option>
             <option value="Satire">Satire</option>
             <option value="Drama">Drama</option>
