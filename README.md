@@ -8,6 +8,8 @@ API docs can be found here: https://documenter.getpostman.com/view/2006055/books
 
 Setup MongoDB locally on the default port(no user) or set the environment variable        ```process.env.MONGODB_URI```
 
+Important: For now the url defined in the vue components is the heroku production url. To fully test it locally change it in every component to your localhost url(I know this can be changed with some webpack config, but I prefer leave it as it is for now to avoid webpack-related issues).
+
 ``` bash
 # install dependencies
 npm install
